@@ -5,7 +5,7 @@ style.Container = styled.div`
   padding: 20px;
 
   .module-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   // &.completed {
   //   text-decoration: line-through;

@@ -1,8 +1,13 @@
 /**
  * Learning module in the language leraning process (intro, greetings1, greetings2, people, animals, ...)
+ * Contains the following components:
+ * - Phrase test: User must translate a phrase from "language A" to "language B"
+ * - Image test: User sees a word in "language A" and must pick an image (captioned in "language B") which corresponds to the word
  */
 import React from 'react';
-import style from './../styles/StyledModule';
+import PhraseTest from './PhraseTest'
+import ImageTest from './ImageTest'
+import style from './../styles/StyledModule'
 
 const Module = () => {
 
@@ -11,7 +16,7 @@ const Module = () => {
   return (
     <Container>
       <div>Progress</div>
-      <h1 className="module-title">Traduit cette phrase</h1>
+      <PhraseTest />
     </Container>
   )
 }
