@@ -6,5 +6,7 @@ Presentational components which:
 - Expects various objects (data, callbacks, ...) from props but is not aware of anything else
 
 
-
+# Definition of each component:
+## Module
+Learning module in the language leraning process (intro, greetings1, greetings2, people, animals, ...)
 

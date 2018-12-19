@@ -1,9 +1,9 @@
 import React from 'react';
 
 import style from './../styles/StyledApp'
-import Footer from './Footer'
-import AddTodo from './../containers/AddTodo'
-import VisibleTodoList from './../containers/VisibleTodoList'
+import Module from './Module'
+// import AddTodo from './../containers/AddTodo'
+// import VisibleTodoList from './../containers/VisibleTodoList'
 import './../../node_modules/normalize.css/normalize.css'
 
 
@@ -14,10 +14,10 @@ const App = () => {
 
   return (
     <AppContainer>
-      <h1>Todo</h1>
+      {/* <h1>Todo</h1>
       <AddTodo />
-      <VisibleTodoList />
-      <Footer />
+      <VisibleTodoList /> */}
+      <Module />
   </AppContainer>
   );
 };
