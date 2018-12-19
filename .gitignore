@@ -1,0 +1,13 @@
+# Don't check auto-generated stuff into git
+dist
+build
+public
+node_modules
+package-lock.json
+yarn.lock
+# Cruft
+.DS_Store
+npm-debug.log
+#VS Code stuff
+.vscode/*
+jsconfig.json
