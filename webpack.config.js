@@ -24,6 +24,15 @@ module.exports = {
         ],
       },
       {
+        test: /\.(png|jpg|gif|mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
+      },
+      {
         // For every JavaScript file
         test: /\.js$/,
         exclude: /(node_modules)/,  // except the one in "node_modules"
