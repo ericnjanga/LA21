@@ -4,7 +4,7 @@ const style = {};
 style.AppContainer = styled.div`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  background: #eee;
+  // background: #eee;
 
   code {
     -webkit-box-decoration-break: clone;

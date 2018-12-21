@@ -120,7 +120,7 @@ class WordsAndSound extends React.Component {
 
   render () {
     const { Container } = style
-    const { phrase } = this.props
+    const { text } = this.props
     
     return (
       <Container>
@@ -143,7 +143,7 @@ class WordsAndSound extends React.Component {
 
         <section className="WordsAndSound__phrase">
           {
-            phrase.map(word =>
+            text.map(word =>
               <Tooltip
                 key={word.id}
                 disableFocusListener

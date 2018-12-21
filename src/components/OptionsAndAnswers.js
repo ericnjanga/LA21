@@ -24,7 +24,7 @@ class OptionsAndAnswers extends React.Component {
   render () {
     const { Container } = style
     const { 
-      answers,
+      wordSelection,
       pickWord,
       removeWord,
       userAnswer
@@ -40,6 +40,7 @@ class OptionsAndAnswers extends React.Component {
               <Chip
                 key={id}
                 label={ value }
+                color="primary"
                 className="chip"
                 onDelete={() => removeWord(id) }
               />
@@ -51,7 +52,7 @@ class OptionsAndAnswers extends React.Component {
         <section className="options">
           <h2 className="title">Choisi ta réponse</h2>
           {
-            answers.map(({ id, value, selected }) =>
+            wordSelection.map(({ id, value, selected }) =>
               <Button
                 key={id}
                 variant="contained"

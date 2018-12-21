@@ -1,5 +1,5 @@
 /**
- * Phrase test: User must translate a phrase from "language A" to "language B"
+ * Phrase test: User must translate a phraseToTranslate from "language A" to "language B"
  * Contains the following components:
  * - Words and sound: A collection of words and their pronounciation (all from "language A")
  */
@@ -17,8 +17,7 @@ class PhraseTest extends Component {
     this.state = {
       answer: 'mot 1 mot 2 mot 3',
       userAnswer: [],
-
-      phrase: [
+      phraseToTranslate: [
         {
           id: 0,
           value: 'Quel',
@@ -40,8 +39,7 @@ class PhraseTest extends Component {
           translation: 'trans1 | trans2 | trans3 | trans4'
         },
       ],
-  
-      answers: [
+      wordSelection: [
         {
           id: 0,
           value: 'mot 1'
@@ -75,48 +73,57 @@ class PhraseTest extends Component {
           value: 'mot 8'
         },
       ]
-  
     }
   }
 
 
+  /**
+   * Add picked "word" into the "userAnswer"
+   * - Avoid duplicate
+   * - Highlight "picked" word
+   */
   handleWordSelection = ({ id, value }) => {
-    const { userAnswer, answers } = this.state
-
-    console.log({ id, value })
-
-    console.log( userAnswer.indexOf({ id, value }) )
-
+    const { userAnswer, wordSelection } = this.state
     const wordInArray = userAnswer.filter(word => word.id===id)
 
-    console.log('>>>wordInArray=', wordInArray[0])
-
+    // console.log({ id, value }) 
+    // console.log( userAnswer.indexOf({ id, value }) )
+    // console.log('>>>wordInArray=', wordInArray[0])
 
 
     if ( !wordInArray[0] ) {
-      answers[id].selected = true
-      userAnswer.push(answers[id])
-      this.setState({ userAnswer, answers })
-      // console.log(`>>>${userAnswer.indexOf(value)}`)
+      wordSelection[id].selected = true // Highlight "picked" word
+      userAnswer.push(wordSelection[id])
+      this.setState({ userAnswer, wordSelection })
     }
-
-
-
-    // if (userAnswer.indexOf(value)===-1) {
-    //   console.log(`>>>${userAnswer.indexOf(value)}`)
-    //   userAnswer.push({ id, value })
-    //   this.setState({ userAnswer })
-    // }
   }
 
 
+  /**
+   * 
+   */
   handleWordRemoval = (id) => {
-    const { userAnswer, answers } = this.state
+    const { userAnswer, wordSelection } = this.state
 
     const newArr = userAnswer.filter(currWord => currWord.id!==id)
-    answers[id].selected = false
-    this.setState({ userAnswer:newArr, answers })
+    wordSelection[id].selected = false
+    this.setState({ userAnswer:newArr, wordSelection })
   }
+
+
+  handleAnswerCheck = () => {
+    const { userAnswer, answer } = this.state
+    const userPhrase = userAnswer.map(function(elem){
+        return elem.value
+    }).join(' ')
+
+    if (userPhrase===answer) {
+      alert('bravo!')
+    } else {
+      alert('Non!')
+    }
+  }
+
 
 
   // componentDidMount() {
@@ -130,8 +137,8 @@ class PhraseTest extends Component {
 
     const { 
       userAnswer,
-      answers,
-      phrase
+      wordSelection,
+      phraseToTranslate
     } = this.state
 
    
@@ -139,11 +146,11 @@ class PhraseTest extends Component {
       <div>
         <h1 className="module-title">Traduit cette phrase</h1>
         <WordsAndSound
-          phrase={phrase}
+          text={phraseToTranslate}
         />
   
         <OptionsAndAnswers
-          answers={answers}
+          wordSelection={wordSelection}
           userAnswer={userAnswer}
           pickWord={this.handleWordSelection}
           removeWord={this.handleWordRemoval}
@@ -153,6 +160,7 @@ class PhraseTest extends Component {
           variant="contained"
           color="primary"
           fullWidth
+          onClick={this.handleAnswerCheck}
         >
           Vérifier
         </Button>

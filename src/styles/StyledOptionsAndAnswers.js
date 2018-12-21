@@ -17,6 +17,7 @@ style.Container = styled.div`
   }
 
   .chip {
+    background-color: rgb(59, 162, 244);
     margin: 5px;
   }
   
@@ -25,12 +26,11 @@ style.Container = styled.div`
   .options {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
-    background: #ccc;
+    margin-bottom: 40px;
+    // background: #ccc;
   }
 
-  .options {
-    margin-top: 40px;
+  .options { 
     
     button {
       margin: 5px;
