@@ -17,8 +17,13 @@ style.Container = styled.div`
   }
 
   .chip {
-    background-color: rgb(59, 162, 244);
     margin: 5px;
+  }
+
+  .answer {
+    .chip {
+      background-color: rgb(59, 162, 244);
+    }
   }
   
 
@@ -26,14 +31,14 @@ style.Container = styled.div`
   .options {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     // background: #ccc;
   }
 
   .options { 
-    
-    button {
-      margin: 5px;
+    .chip-picked {
+      background-color: #999;
+      color: #fff;
     }
   }
 `

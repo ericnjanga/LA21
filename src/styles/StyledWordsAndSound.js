@@ -5,7 +5,7 @@ const style = {}
 style.Container = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 
   .WordsAndSound__btn {
     margin-right: 5px;

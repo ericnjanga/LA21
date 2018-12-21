@@ -53,14 +53,22 @@ class OptionsAndAnswers extends React.Component {
           <h2 className="title">Choisi ta réponse</h2>
           {
             wordSelection.map(({ id, value, selected }) =>
-              <Button
+              !selected ?
+              <Chip
                 key={id}
-                variant="contained"
-                color={ selected ? 'secondary' : 'default' }
-                onClick={()=>pickWord({ id, value })}
-              >
-                {value}
-              </Button>
+                label={ value }
+                color="default"
+                className="chip"
+                onClick={ ()=> pickWord({ id, value }) }
+              />
+              :
+              <Chip
+                key={id}
+                label={ value }
+                className="chip chip-picked"
+                onClick={ ()=> removeWord(id) }
+                onDelete={() => removeWord(id) }
+              />
             )
           }
         </section>
