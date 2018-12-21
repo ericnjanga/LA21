@@ -120,6 +120,7 @@ class WordsAndSound extends React.Component {
 
   render () {
     const { Container } = style
+    const { phrase } = this.props
     
     return (
       <Container>
@@ -140,21 +141,20 @@ class WordsAndSound extends React.Component {
         
         <audio ref={this.audioPlayer} src={sound} autoPlay={false} />
 
-        <div className="WordsAndSound__phrase">
-          <Tooltip disableFocusListener disableTouchListener title="Quel">
-            <span>Quel</span>
-          </Tooltip>
-          <Tooltip disableFocusListener disableTouchListener title="est">
-            <span>est</span>
-          </Tooltip>
-          <Tooltip disableFocusListener disableTouchListener title="ton">
-            <span>ton</span>
-          </Tooltip>
-          <Tooltip disableFocusListener disableTouchListener title="nom">
-            <span>nom</span>
-          </Tooltip>
-          ?
-        </div>
+        <section className="WordsAndSound__phrase">
+          {
+            phrase.map(word =>
+              <Tooltip
+                key={word.id}
+                disableFocusListener
+                disableTouchListener
+                title={word.translation}
+              >
+                <span>{word.value}</span>
+              </Tooltip>
+            )
+          }
+        </section>
       </Container>
     )
 
