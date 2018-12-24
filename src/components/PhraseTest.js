@@ -7,6 +7,7 @@ import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
 import WordsAndSound from './WordsAndSound'
 import OptionsAndAnswers from './OptionsAndAnswers'
+import DialogOutput from './DialogOutput'
 // import style from './../styles/StyledModule'
 
 
@@ -15,6 +16,11 @@ class PhraseTest extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      dialogMessageOutput: {
+        visible: false,
+        title: '',
+        content: '',
+      },
       answer: 'mot 1 mot 2 mot 3',
       userAnswer: [],
       phraseToTranslate: [
@@ -112,7 +118,7 @@ class PhraseTest extends Component {
 
 
   handleAnswerCheck = () => {
-    const { userAnswer, answer } = this.state
+    const { userAnswer, answer, dialogMessageOutput } = this.state
     const userPhrase = userAnswer.map(function(elem){
         return elem.value
     }).join(' ')
@@ -120,9 +126,22 @@ class PhraseTest extends Component {
     if (userPhrase===answer) {
       alert('bravo!')
     } else {
-      alert('Non!')
+      alert(`Non non, ceci n'est pas correct!
+        ${answer}
+      `)
     }
+
+    this.toggleDialog()
   }
+
+
+  toggleDialog = () => {
+    this.setState({ dialogMessageOutput: true });
+  };
+
+  handleDIalogClose = () => {
+    this.setState({ dialogMessageOutput: false });
+  };
 
 
 
@@ -138,7 +157,8 @@ class PhraseTest extends Component {
     const { 
       userAnswer,
       wordSelection,
-      phraseToTranslate
+      phraseToTranslate,
+      dialogMessageOutput,
     } = this.state
 
    
@@ -154,6 +174,10 @@ class PhraseTest extends Component {
           userAnswer={userAnswer}
           pickWord={this.handleWordSelection}
           removeWord={this.handleWordRemoval}
+        />
+
+        <DialogOutput
+          visible={dialogMessageOutput}
         />
   
         <Button
