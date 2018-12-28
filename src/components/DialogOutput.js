@@ -41,7 +41,8 @@ class AlertDialogSlide extends React.Component {
     const { 
       visible,
       title,
-      content
+      content,
+      onClose,
     } = this.props
 
     return (
@@ -53,7 +54,7 @@ class AlertDialogSlide extends React.Component {
           open={visible}
           TransitionComponent={Transition}
           keepMounted
-          onClose={this.handleClose}
+          onClose={onClose}
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
         >
@@ -69,10 +70,10 @@ class AlertDialogSlide extends React.Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={onClose} color="primary">
               Disagree
             </Button>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={onClose} color="primary">
               Agree
             </Button>
           </DialogActions>

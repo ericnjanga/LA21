@@ -124,14 +124,13 @@ class PhraseTest extends Component {
     }).join(' ')
 
     if (userPhrase===answer) {
-      alert('bravo!')
+      dialogMessageOutput.title = 'bravo!'
     } else {
-      alert(`Non non, ceci n'est pas correct!
-        ${answer}
-      `)
+      dialogMessageOutput.title = 'Non non, ceci n\'est pas correct!'
     }
-
-    this.toggleDialog()
+    dialogMessageOutput.content = answer
+    dialogMessageOutput.visible = true
+    this.setState({ dialogMessageOutput }, ()=>{ console.log(dialogMessageOutput)})
   }
 
 
@@ -177,7 +176,8 @@ class PhraseTest extends Component {
         />
 
         <DialogOutput
-          visible={dialogMessageOutput}
+          {...dialogMessageOutput}
+          onClose={this.handleDIalogClose}
         />
   
         <Button
