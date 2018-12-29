@@ -20,6 +20,7 @@ class PhraseTest extends Component {
         visible: false,
         title: '',
         content: '',
+        status: '',
       },
       answer: 'mot 1 mot 2 mot 3',
       userAnswer: [],
@@ -124,9 +125,11 @@ class PhraseTest extends Component {
     }).join(' ')
 
     if (userPhrase===answer) {
-      dialogMessageOutput.title = 'bravo!'
+      dialogMessageOutput.title = 'Bravo!'
+      dialogMessageOutput.status = 'hasSuccess' //Dialog will be styled accordingly
     } else {
-      dialogMessageOutput.title = 'Non non, ceci n\'est pas correct!'
+      dialogMessageOutput.title = 'Non, c\'est pas correct!'
+      dialogMessageOutput.status = 'hasDanger' //Dialog will be styled accordingly
     }
     dialogMessageOutput.content = answer
     dialogMessageOutput.visible = true
@@ -135,11 +138,15 @@ class PhraseTest extends Component {
 
 
   toggleDialog = () => {
-    this.setState({ dialogMessageOutput: true });
+    const { dialogMessageOutput } = this.state
+    dialogMessageOutput.visible = true
+    this.setState({ dialogMessageOutput });
   };
 
   handleDIalogClose = () => {
-    this.setState({ dialogMessageOutput: false });
+    const { dialogMessageOutput } = this.state
+    dialogMessageOutput.visible = false
+    this.setState({ dialogMessageOutput });
   };
 
 
