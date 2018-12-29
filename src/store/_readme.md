@@ -14,3 +14,8 @@ NOTE:
 
 METHODS:
 * createStore: Creates a Redux store that holds the complete state tree of your app.
+
+------------------------
+
+STORE PLAN:
+See /src/store/_store-plan.js
