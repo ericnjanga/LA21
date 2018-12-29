@@ -6,12 +6,23 @@ import { render } from 'react-dom'
 // Provider       : 'react-redux' component (similar to "context") which make the store available to all container components in the application without passing it explicitly
 import { Provider } from 'react-redux'
 // Store          : brings 'actions' and 'reducers' together and holds the application's state
-import reduxStore from './store'      
+import reduxStore from './store'
 import App from './components/App'
+import TemporaryAppProvider from './containers/TempAppProvider'
 
 render(
-  <Provider store={reduxStore}>
-    <App />
-  </Provider>,
+  // <Provider store={reduxStore}>
+  //   <App />
+  // </Provider>,
+
+  <TemporaryAppProvider>
+    {
+      (store) => (
+        <App
+          store={store}
+        />
+      )
+    }
+  </TemporaryAppProvider>,
   document.getElementById('app-root')
-);
+)
