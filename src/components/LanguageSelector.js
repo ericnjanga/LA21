@@ -41,27 +41,36 @@ const LanguageSelector = () => {
 
   return (
     <Container>
-      <h1 className="band">T21</h1>
+      <h1 className="brand">T21</h1>
       <h2 className="title">Quelle langue veux-tu apprendre?</h2>
       <div>
         <ul className="lang-list">
           {
             languages.map(lang => {
               return (
-                <li key={lang.id}>
-                {
-                  console.log(lang.img)
-                }
-                  <figure class="thumbnail">
-                    <img src={lang.img}/>
-                    <figcaption>{lang.name}</figcaption>
-                  </figure>
+                <li className="lang-list__li" key={lang.id}>
+                  <input 
+                    type="radio"
+                    id={lang.id}
+                    name="langSelector"
+                    value={lang.name}
+                    className="lang-list__input"
+                  />
+                  <label for={lang.id} className="lang-list__label">
+                    {
+                      console.log(lang.img)
+                    }
+                    <figure className="thumbnail">
+                      <img src={lang.img}/>
+                      <figcaption className="thumbnail-caption">{lang.name}</figcaption>
+                    </figure>
+                  </label>
                 </li>
               )
             })
           }
         </ul>
-        <footer>
+        <footer className="container-footer">
           <Button
             variant="contained"
             color="primary"
