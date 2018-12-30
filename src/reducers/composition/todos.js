@@ -14,6 +14,7 @@ const {
  * @param {*} action 
  */
 const todos = (stateTodosArray = [], action) => {
+  console.log('todos')
   switch (action.type) {
     case ADD_TODO:
       return [

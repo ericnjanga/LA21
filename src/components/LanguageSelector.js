@@ -56,7 +56,10 @@ const LanguageSelector = () => {
                     value={lang.name}
                     className="lang-list__input"
                   />
-                  <label for={lang.id} className="lang-list__label">
+                  <label
+                    htmlFor={lang.id}
+                    className="lang-list__label"
+                  >
                     {
                       console.log(lang.img)
                     }

@@ -3,6 +3,9 @@ import { combineReducers } from 'redux' // Learn more about combineReducers in t
 // All reducers
 import todos from './composition/todos'
 import visibilityFilter from './composition/visibilityFilter'
+import languages from './composition/languages'
+import modules from './composition/modules'
+import phraseTests from './composition/phraseTests'
 
 
 /**
@@ -18,7 +21,10 @@ import visibilityFilter from './composition/visibilityFilter'
 
 const todoApp = combineReducers({
   todos,
-  visibilityFilter
+  visibilityFilter,
+  languages,
+  modules,
+  phraseTests
 })
 
 
