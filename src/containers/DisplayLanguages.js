@@ -3,7 +3,7 @@
  * Purpose: ...
  */
 import { connect } from 'react-redux'
-import LanguageListThumb from './../components/LanguageListThumb'
+import ListOfLanguageThumb from './../components/ListOfLanguageThumb'
 
 const mapStateToProps = (state, ownProps) => {
   // console.log('>>>>>>languages = ', state.languages)
@@ -14,6 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const DisplayLanguages = connect(
   mapStateToProps
-)(LanguageListThumb)
+)(ListOfLanguageThumb)
 
 export default DisplayLanguages

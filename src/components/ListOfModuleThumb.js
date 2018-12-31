@@ -1,28 +1,28 @@
 import React from 'react'
 
 
-const LanguageListThumb = ({
+const ListOfModuleThumb = ({
   className,
-  languages,
+  modules,
   onChange,
 }) => {
   return (
-    <ul className={className}>
+    <ul className={`list ${className}`}>
       {
-        languages.map(lang => {
+        modules.map(lang => {
           return (
-            <li className="lang-list__li" key={lang.id}>
+            <li className="list__li" key={lang.id}>
               <input 
                 type="radio"
                 id={lang.id}
                 name="langSelector"
                 value={lang.name}
                 onChange={()=>onChange(lang)}
-                className="lang-list__input"
+                className="list__input"
               />
               <label
                 htmlFor={lang.id}
-                className="lang-list__label"
+                className="list__label"
               >
                 <figure className="thumbnail">
                   <img src={lang.img}/>
@@ -37,4 +37,4 @@ const LanguageListThumb = ({
   )
 }
  
-export default LanguageListThumb
+export default ListOfModuleThumb

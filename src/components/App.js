@@ -4,7 +4,7 @@ import ProgressCircle from './ProgressCircle'
 import style from './../styles/StyledApp'
 import Module from './Module'
 import ViewLanguageSelector from './ViewLanguageSelector'
-// import LanguageSelector from './../containers/LanguageSelector'
+import ViewModuleSelector from './ViewModuleSelector'
 import './../../node_modules/normalize.css/normalize.css'
 
 
@@ -25,7 +25,8 @@ const App = () => {
 
   return (
     <AppContainer>
-      <ViewLanguageSelector />
+    {/* <ViewLanguageSelector /> */}
+      <ViewModuleSelector />
       {/* <AppBar />
       <Module /> */}
     </AppContainer>
