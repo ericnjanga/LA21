@@ -11,18 +11,18 @@ import App from './components/App'
 import TemporaryAppProvider from './containers/TempAppProvider'
 
 render(
-  // <Provider store={reduxStore}>
-  //   <App />
-  // </Provider>,
+  <Provider store={reduxStore}>
+    <App />
+  </Provider>,
 
-  <TemporaryAppProvider>
-    {
-      (store) => (
-        <App
-          store={store}
-        />
-      )
-    }
-  </TemporaryAppProvider>,
+  // <TemporaryAppProvider>
+  //   {
+  //     (store) => (
+  //       <App
+  //         store={store}
+  //       />
+  //     )
+  //   }
+  // </TemporaryAppProvider>,
   document.getElementById('app-root')
 )

@@ -51,7 +51,7 @@ style.Container = styled.div`
 
   .container-footer {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     width: calc(100% - ${2 * padding}px);
   }
   

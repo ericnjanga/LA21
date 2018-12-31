@@ -15,6 +15,7 @@ const defaultLanguages = [
   //   id: 0,
   //   name: 'Bagangte',
   //   code: 'BG',
+  //   img: img1,
   // },
   {
     id: 1,
@@ -39,18 +40,28 @@ const defaultLanguages = [
     code: 'YB',
     img: img3,
   },
-] // languages
+] // defaultLanguages
 
-const languages = (stateLanguages = [...defaultLanguages], action) => {
+
+/**
+ * Manages the language portio of the state
+ * - Return languages in the state.
+ * - Activate a specific language (while deactivating the rest)
+ */
+const languagesManager = (stateLanguages = [...defaultLanguages], action) => {
   switch(action.type) {
     case ACTIVATE_LANGUAGE:
       return stateLanguages.map(
-        language =>
-          language.id === action.id ? { ...language, active:true } : { ...language, active:false }
+        lang => {
+          const { language: { id:selectedLangId } } = action
+          return lang.id === selectedLangId ? { ...lang, active:true } : { ...lang, active:false }
+        }
+          
       )
     default:
       return stateLanguages
   }
 }
 
-export default languages
+
+export default languagesManager

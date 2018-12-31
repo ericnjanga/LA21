@@ -45,3 +45,11 @@ export const toggleTodo = id => ({
   type: TOGGLE_TODO,
   id
 })
+
+
+
+
+export const setActiveLanguage = language => ({
+  type: ACTIVATE_LANGUAGE,
+  language
+})
