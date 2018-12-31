@@ -5,6 +5,10 @@ import actionTypes from './../../actions/_actionTypes'
 import img1 from './../../media/img-la1.jpg'
 import img2 from './../../media/img-la2.jpg'
 import img3 from './../../media/img-la3.jpg'
+const {
+  ACTIVATE_LANGUAGE,
+} = actionTypes
+
 
 const defaultLanguages = [
   // {
@@ -39,6 +43,11 @@ const defaultLanguages = [
 
 const languages = (stateLanguages = [...defaultLanguages], action) => {
   switch(action.type) {
+    case ACTIVATE_LANGUAGE:
+      return stateLanguages.map(
+        language =>
+          language.id === action.id ? { ...language, active:true } : { ...language, active:false }
+      )
     default:
       return stateLanguages
   }
