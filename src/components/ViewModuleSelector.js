@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import StyledViewSelection from './../styles/StyledViewSelection'
-import SubmitLanguage from './../containers/SubmitLanguage'
+import ActivateSelection from './../containers/ActivateSelection'
 import DisplayModules from './../containers/DisplayModules'
 
 class ViewModuleSelector extends Component {
@@ -37,13 +37,14 @@ class ViewModuleSelector extends Component {
             modules={modules}
             onChange={this.handleLanguageSelection}
           />
-          {/* <footer className="container-footer">
-            <SubmitLanguage
-              module={selection}
+          <footer className="container-footer">
+            <ActivateSelection
+              selection={selection}
+              type="module"
             >
               Continuer
-            </SubmitLanguage>
-          </footer> */}
+            </ActivateSelection>
+          </footer>
         </div>
       </Container>
     )

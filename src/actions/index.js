@@ -13,7 +13,8 @@ const {
 
   ADMIN_ADD_LANGUAGE,
   ADMIN_EDIT_LANGUAGE,
-  ACTIVATE_LANGUAGE
+  ACTIVATE_LANGUAGE,
+  ACTIVATE_MODULE
 } = actionTypes
 
 
@@ -52,4 +53,9 @@ export const toggleTodo = id => ({
 export const setActiveLanguage = language => ({
   type: ACTIVATE_LANGUAGE,
   language
+})
+
+export const setActiveModule = module => ({
+  type: ACTIVATE_MODULE,
+  module
 })

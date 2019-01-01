@@ -31,6 +31,7 @@ const storePlan = {
     {
       id: 0,
       name: 'Introduction',
+      active: true,
     },
     {
       id: 1,

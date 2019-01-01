@@ -4,7 +4,7 @@ import { combineReducers } from 'redux' // Learn more about combineReducers in t
 import todos from './composition/todos'
 import visibilityFilter from './composition/visibilityFilter'
 import languages from './composition/languagesManager'
-import modules from './composition/modules'
+import modules from './composition/modulesManager'
 import phraseTests from './composition/phraseTests'
 
 

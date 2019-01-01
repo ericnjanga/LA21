@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import StyledViewSelection from './../styles/StyledViewSelection'
-import SubmitLanguage from './../containers/SubmitLanguage'
+import ActivateSelection from './../containers/ActivateSelection'
 import DisplayLanguages from './../containers/DisplayLanguages'
 
 class ViewLanguageSelector extends Component {
@@ -38,11 +38,12 @@ class ViewLanguageSelector extends Component {
             onChange={this.handleLanguageSelection}
           />
           <footer className="container-footer">
-            <SubmitLanguage
-              language={selection}
+            <ActivateSelection
+              selection={selection}
+              type="language"
             >
               Continuer
-            </SubmitLanguage>
+            </ActivateSelection>
           </footer>
         </div>
       </Container>

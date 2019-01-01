@@ -53,10 +53,9 @@ const languagesManager = (stateLanguages = [...defaultLanguages], action) => {
     case ACTIVATE_LANGUAGE:
       return stateLanguages.map(
         lang => {
-          const { language: { id:selectedLangId } } = action
-          return lang.id === selectedLangId ? { ...lang, active:true } : { ...lang, active:false }
+          const { language: { id:selectionId } } = action
+          return lang.id === selectionId ? { ...lang, active:true } : { ...lang, active:false }
         }
-          
       )
     default:
       return stateLanguages

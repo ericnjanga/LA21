@@ -53,6 +53,10 @@ style.Container = styled.div`
     .thumbnail-caption {
       margin-top: 5px;
     }
+
+    .lowOpacity {
+      opacity: 0.4;
+    }
   } 
 
 
@@ -81,6 +85,8 @@ style.Container = styled.div`
       }
     }
   }
+
+  
  
 
   .module-list { 
