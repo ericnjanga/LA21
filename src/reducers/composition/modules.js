@@ -10,27 +10,27 @@ import img3 from './../../media/img-la3.jpg'
 const defaultModules = [
   {
     id: 0,
-    name: 'Intro',
+    name: 'Introduction',
     img: img1,
   },
   {
     id: 1,
-    name: 'Greetings1',
+    name: 'Salutations 1',
     img: img2,
   },
   {
     id: 2,
-    name: 'Greetings2',
+    name: 'Salutations 2',
     img: img3,
   },
   {
     id: 3,
-    name: 'People',
+    name: 'Les gens',
     img: img1,
   },
   {
     id: 4,
-    name: 'Present',
+    name: 'Le present',
     img: img2,
   },
 ]

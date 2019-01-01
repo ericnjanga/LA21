@@ -30,23 +30,23 @@ const storePlan = {
   modules: [
     {
       id: 0,
-      name: 'Intro',
+      name: 'Introduction',
     },
     {
       id: 1,
-      name: 'Greetings1',
+      name: 'Salutations 1',
     },
     {
       id: 2,
-      name: 'Greetings2',
+      name: 'Salutations 2',
     },
     {
       id: 3,
-      name: 'People',
+      name: 'Les gens',
     },
     {
       id: 4,
-      name: 'Present',
+      name: 'Le present',
     },
   ],
   phraseTests: [

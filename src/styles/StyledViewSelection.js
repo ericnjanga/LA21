@@ -95,28 +95,29 @@ style.Container = styled.div`
       // same width as the rest and centered
       display: flex; 
       justify-content: center; 
-      grid-column: 1 / 3;
-      // grid-row: 2;
+      grid-column: 1 / 3; 
       .list__label {
-        width: 50%;
+        width: 35%;
       }
-    }
-    .list__li:nth-of-type(1) {
-      border: 2px solid red; 
     } 
-    .list__li:nth-of-type(2) {
-      border: 2px solid lime;
+    .list__li:nth-of-type(2) { 
       // grid-column: 1 / 2;
       grid-row: 2;
     }
+    .list__li:nth-of-type(3) { 
+      .list__label {
+        margin-left: auto;
+      }
+    }
     .list__li:nth-of-type(3),
-    .list__li:nth-of-type(4) {
-      border: 2px solid lime;
-      // grid-column: 1 / 2;
+    .list__li:nth-of-type(4) { 
       grid-row: 3;
+      .list__label {
+        width: 70%;
+      }
     }
     .list__li:nth-of-type(5) {
-      border: 2px solid lime;
+      // border: 2px solid lime;
       grid-row: 4;
     }
   }
