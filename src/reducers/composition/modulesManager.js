@@ -34,12 +34,12 @@ const defaultModules = [
     img: img1,
     disabled: true,
   },
-  {
-    id: 4,
-    name: 'Le present',
-    img: img2,
-    disabled: true,
-  },
+  // {
+  //   id: 4,
+  //   name: 'Le present',
+  //   img: img2,
+  //   disabled: true,
+  // },
 ]
 
 const modulesManager = (stateModules = defaultModules, action) => {

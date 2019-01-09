@@ -12,4 +12,9 @@ const getVisibleTodos = (todos, filter) => {
   }
 }
 
+export const getActiveSelection = (state) => {
+  // console.log(state)
+  return state.filter((item) => item.active===true)[0]
+}
+
 export default getVisibleTodos

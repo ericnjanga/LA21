@@ -24,6 +24,12 @@ const defaultLanguages = [
     img: img1,
   },
   {
+    id: 4,
+    name: 'Yemba',
+    code: 'YB',
+    img: img3,
+  },
+  {
     id: 2,
     name: 'Bassa',
     code: 'BA',
@@ -34,12 +40,6 @@ const defaultLanguages = [
   //   name: 'Douala',
   //   code: 'BL',
   // },
-  {
-    id: 4,
-    name: 'Yemba',
-    code: 'YB',
-    img: img3,
-  },
 ] // defaultLanguages
 
 

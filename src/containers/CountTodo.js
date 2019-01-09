@@ -4,7 +4,7 @@
  */
 import { connect } from 'react-redux'
 import CounterDisplay from './../components/CounterDisplay'
-import getVisibleTodos from './../helpers/getVisibleTodos'
+import getVisibleTodos from './../helpers/helpers1'
 
 const mapStateToProps = (state, ownProps) => {
   console.log('>>>>>>', state.todos)

@@ -4,8 +4,14 @@ import React from 'react'
 const ListOfModuleThumb = ({
   className,
   modules,
+  activeModule,
   onChange,
 }) => {
+
+  // console.group('ListOfModuleThumb')
+  // console.log(activeModule)
+  // console.groupEnd()
+
   return (
     <ul className={`list ${className}`}>
       {

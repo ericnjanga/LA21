@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { toggleTodo } from './../actions'
 import TodoList from './../components/TodoList'
-import getVisibleTodos from './../helpers/getVisibleTodos'
+import getVisibleTodos from './../helpers/helpers1'
 
 const mapStateToProps = state => {
   return {

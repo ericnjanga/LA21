@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import StyledViewSelection from './../styles/StyledViewSelection'
 import ActivateSelection from './../containers/ActivateSelection'
-import DisplayLanguages from './../containers/DisplayLanguages'
+import ListOfLanguageThumb from './../components/ListOfLanguageThumb'
 
 class ViewLanguageSelector extends Component {
 
@@ -23,18 +23,22 @@ class ViewLanguageSelector extends Component {
 
     // const radioGroup
     const { Container } = StyledViewSelection
-    const { languages, onClick } = this.props
+    const { className, list, itemSelected } = this.props
     const { selection } = this.state
 
+    if (itemSelected) {
+      return false
+    }
+
     return (
-      <Container>
-        <h1 className="brand">T21</h1>
+      <Container className={className}>
+        {/* <h1 className="brand">T21</h1> */}
         <h2 className="title">Quelle langue veux-tu apprendre?</h2>
         
         <div>
-          <DisplayLanguages
+          <ListOfLanguageThumb
             className="lang-list"
-            languages={languages}
+            languages={list}
             onChange={this.handleLanguageSelection}
           />
           <footer className="container-footer">

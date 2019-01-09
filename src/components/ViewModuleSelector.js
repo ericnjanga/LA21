@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import StyledViewSelection from './../styles/StyledViewSelection'
 import ActivateSelection from './../containers/ActivateSelection'
-import DisplayModules from './../containers/DisplayModules'
+import ListOfModuleThumb from './../components/ListOfModuleThumb'
 
 class ViewModuleSelector extends Component {
 
@@ -23,18 +23,22 @@ class ViewModuleSelector extends Component {
 
     // const radioGroup
     const { Container } = StyledViewSelection
-    const { modules, onClick } = this.props
+    const { className, list, itemSelected } = this.props
     const { selection } = this.state
 
+    if (itemSelected) {
+      return false
+    }
+
     return (
-      <Container>
+      <Container className={className}>
         {/* <h1 className="brand">T21</h1> */}
-        <h2 className="title">Que voulez-vous apprendre?</h2>
+        <h2 className="title">Choisissez un module</h2>
         
         <div>
-          <DisplayModules
+          <ListOfModuleThumb
             className="module-list"
-            modules={modules}
+            modules={list}
             onChange={this.handleLanguageSelection}
           />
           <footer className="container-footer">

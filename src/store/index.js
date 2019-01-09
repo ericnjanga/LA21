@@ -3,7 +3,7 @@
  */
 import { createStore } from 'redux'
 import rootReducer from './../reducers'
-import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from '../actions';
+// import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from '../actions';
 
 const store = createStore(
   rootReducer,
@@ -13,7 +13,7 @@ const store = createStore(
 // *** TESTS ***
 // *** TESTS ***
 // log initial state
-console.log(store.getState())
+// console.log(store.getState())
 // // ...
 // const unsubscribe = store.subscribe( () => console.log(store.getState()) )
 // // ...

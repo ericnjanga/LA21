@@ -4,8 +4,14 @@ import React from 'react'
 const ListOfLanguageThumb = ({
   className,
   languages,
+  activeLanguage,
   onChange,
 }) => {
+
+  // console.group('ListOfLanguageThumb')
+  // console.log(activeLanguage)
+  // console.groupEnd()
+
   return (
     <ul className={`list ${className}`}>
       {

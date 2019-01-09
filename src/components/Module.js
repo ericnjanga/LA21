@@ -7,11 +7,11 @@
 import React from 'react';
 import PhraseTest from './PhraseTest'
 import ImageTest from './ImageTest'
-import style from './../styles/StyledModule'
+import StyledViewSelection from './../styles/StyledViewSelection'
 
 const Module = () => {
 
-  const { Container } = style
+  const { Container } = StyledViewSelection
 
   return (
     <Container>

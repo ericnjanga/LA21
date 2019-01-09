@@ -6,8 +6,21 @@ const style = {}
 const padding = 20
 style.Container = styled.div`
 
+  position: absolute;
+  z-index: 10;
+  background: #fff;
   padding: ${padding}px;
+  padding-top: 60px;
+  height: calc(100% - ${padding + 60}px);
   text-align: center;
+
+  .h2 {
+    font-size: 1.2rem;
+  }
+
+  &.active {
+    z-index: 11;
+  }
 
   .brand {
     color: green;
@@ -61,18 +74,7 @@ style.Container = styled.div`
 
 
   .lang-list {
-    margin-top: 50px;
-    // .thumbnail {
-    //   margin: 0;
-    //   padding: 5px;
-    //   img {
-    //     max-width: 100%;
-    //     border-radius: 4px;
-    //   }
-    // }
-    // .thumbnail-caption {
-    //   margin-top: 5px;
-    // }
+    margin-top: 50px; 
     // center item with image having the
     // same width as the rest and centered
     .list__li:nth-of-type(3) {
@@ -129,14 +131,9 @@ style.Container = styled.div`
   }
  
 
-
-
-
-
-
   .container-footer {
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     width: calc(100% - ${2 * padding}px);
   }
   

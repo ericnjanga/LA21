@@ -170,7 +170,7 @@ class PhraseTest extends Component {
    
     return (
       <div>
-        <h1 className="module-title">Traduit cette phrase</h1>
+        <h1 className="h2">Traduit cette phrase</h1>
         <WordsAndSound
           text={phraseToTranslate}
         />
