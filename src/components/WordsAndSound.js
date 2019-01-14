@@ -142,17 +142,23 @@ class WordsAndSound extends React.Component {
         <audio ref={this.audioPlayer} src={sound} autoPlay={false} />
 
         <section className="WordsAndSound__phrase">
+          <DisplayTextInFrench
+            text={text}
+          />
+          {/* {
+            text 
+          } */}
           {
-            text.map(word =>
-              <Tooltip
-                key={word.id}
-                disableFocusListener
-                disableTouchListener
-                title={word.translation}
-              >
-                <span>{word.value}</span>
-              </Tooltip>
-            )
+            // text.split(' ').map(word =>
+            //   <Tooltip
+            //     key={word.id}
+            //     disableFocusListener
+            //     disableTouchListener
+            //     title={word}
+            //   >
+            //     <span>{word}</span>
+            //   </Tooltip>
+            // )
           }
         </section>
       </Container>
@@ -160,5 +166,32 @@ class WordsAndSound extends React.Component {
 
   }
 }
+
+
+/**
+ * Deconstruct words contained in the incomming text.
+ * - display each equivalent words in French
+ */
+const DisplayTextInFrench = ({ text }) => {
+  const mapText = text.split(' ')
+  return (
+    <div>
+      {
+        mapText.map(word =>
+          <Tooltip
+            key={word}
+            disableFocusListener
+            disableTouchListener
+            title={word}
+          >
+            <span>{word}</span>
+          </Tooltip>
+        )
+      }
+    </div>
+  )
+}
+
+
  
 export default WordsAndSound

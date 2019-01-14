@@ -24,62 +24,8 @@ class PhraseTest extends Component {
       },
       answer: 'mot 1 mot 2 mot 3',
       userAnswer: [],
-      phraseToTranslate: [
-        {
-          id: 0,
-          value: 'Quel',
-          translation: 'trans1 | trans2'
-        },
-        {
-          id: 1,
-          value: 'est',
-          translation: 'trans1 | trans2 | trans3'
-        },
-        {
-          id: 2,
-          value: 'ton',
-          translation: 'trans1 | trans2'
-        },
-        {
-          id: 3,
-          value: 'nom?',
-          translation: 'trans1 | trans2 | trans3 | trans4'
-        },
-      ],
-      wordSelection: [
-        {
-          id: 0,
-          value: 'mot 1'
-        },
-        {
-          id: 1,
-          value: 'mot 2'
-        },
-        {
-          id: 2,
-          value: 'mot 3'
-        },
-        {
-          id: 3,
-          value: 'mot 4'
-        },
-        {
-          id: 4,
-          value: 'mot 5'
-        },
-        {
-          id: 5,
-          value: 'mot 6'
-        },
-        {
-          id: 6,
-          value: 'mot 7'
-        },
-        {
-          id: 7,
-          value: 'mot 8'
-        },
-      ]
+      phraseToTranslate: 'Quel est ton nom?', 
+      wordSelection: ['mot 1', 'mot 2', 'mot 3', 'mot 4', 'mot 5', 'mot 6'],
     }
   }
 
@@ -90,7 +36,7 @@ class PhraseTest extends Component {
    * - Highlight "picked" word
    */
   handleWordSelection = ({ id, value }) => {
-    const { userAnswer, wordSelection } = this.state
+    const { userAnswer, listOfWordsForSelection } = this.state
     const wordInArray = userAnswer.filter(word => word.id===id)
 
     // console.log({ id, value }) 
@@ -99,9 +45,9 @@ class PhraseTest extends Component {
 
 
     if ( !wordInArray[0] ) {
-      wordSelection[id].selected = true // Highlight "picked" word
-      userAnswer.push(wordSelection[id])
-      this.setState({ userAnswer, wordSelection })
+      listOfWordsForSelection[id].selected = true // Highlight "picked" word
+      userAnswer.push(listOfWordsForSelection[id])
+      this.setState({ userAnswer, listOfWordsForSelection })
     }
   }
 
@@ -110,11 +56,11 @@ class PhraseTest extends Component {
    * 
    */
   handleWordRemoval = (id) => {
-    const { userAnswer, wordSelection } = this.state
+    const { userAnswer, listOfWordsForSelection } = this.state
 
     const newArr = userAnswer.filter(currWord => currWord.id!==id)
-    wordSelection[id].selected = false
-    this.setState({ userAnswer:newArr, wordSelection })
+    listOfWordsForSelection[id].selected = false
+    this.setState({ userAnswer:newArr, listOfWordsForSelection })
   }
 
 
@@ -151,9 +97,16 @@ class PhraseTest extends Component {
 
 
 
-  // componentDidMount() {
+  componentDidMount() {
+    const { wordSelection } = this.state
+    // Translate the current array of words to select into an indexable array (much more easy to manipulate)
+    const listOfWordsForSelection = wordSelection.map((word, id) => {
+      return { id, value:word, selected:false }
+    })
 
-  // }
+    this.setState({ listOfWordsForSelection })
+
+  }
 
 
   render() {
@@ -162,7 +115,7 @@ class PhraseTest extends Component {
 
     const { 
       userAnswer,
-      wordSelection,
+      listOfWordsForSelection,
       phraseToTranslate,
       dialogMessageOutput,
     } = this.state
@@ -174,13 +127,16 @@ class PhraseTest extends Component {
         <WordsAndSound
           text={phraseToTranslate}
         />
-  
-        <OptionsAndAnswers
-          wordSelection={wordSelection}
-          userAnswer={userAnswer}
-          pickWord={this.handleWordSelection}
-          removeWord={this.handleWordRemoval}
-        />
+
+        {
+          listOfWordsForSelection && 
+          <OptionsAndAnswers
+            wordSelection={listOfWordsForSelection}
+            userAnswer={userAnswer}
+            pickWord={this.handleWordSelection}
+            removeWord={this.handleWordRemoval}
+          />
+        }
 
         <DialogOutput
           {...dialogMessageOutput}
